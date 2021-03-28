@@ -1,7 +1,7 @@
 var seeder = require('mongoose-seed')
 
 
-const db = "mongodb://localhost/bffl_db"
+const db = process.env.MONGODB_URI || "mongodb://localhost/bffl_db"
 
 seeder.connect(db, () =>{
     seeder.loadModels(["./models/interests", "./models/profile", "./models/favorites", "./models/user"])
